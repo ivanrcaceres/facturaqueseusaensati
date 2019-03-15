@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+     <!--Hoja para la factura-->
+    <record id="paperformat_factura" model="report.paperformat">
+        <field name="name">Factura Formato</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">325</field>
+        <field name="page_width">210</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+        <!--Factura-->
+    <report
+            id="report_factura"
+            model="account.invoice"
+            string="Factura"
+            report_type="qweb-pdf"
+            name="factura_rapidsoft.factura_2019"
+            file="factura_rapidsoft.factura_2019"
+            attachment_use="True"
+            paperformat="paperformat_factura"
+    />
+
+
+    </data>
+</odoo>
